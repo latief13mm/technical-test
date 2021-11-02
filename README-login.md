@@ -1,3 +1,12 @@
+If you want to login you can use access :
+username : latief
+password : 12345
+
+Or
+
+username : coba
+password : 12345
+
 ![](https://cdn.bailey.pt/phplogin-banner.png)
 
 php-login is a simple and secure login and signup ready made system that will speed up your development. The code is very simple to read and modify, and is built with PHP, MySQL and jQuery (AJAX) using Bootstrap 3 for the form design as well as PHP-Mailer for user account verification and confirmation.
@@ -5,7 +14,9 @@ php-login is a simple and secure login and signup ready made system that will sp
 <img src="https://raw.githubusercontent.com/fethica/PHP-Login/master/login/images/screenshot.png" alt="Login Page Screenshot" />
 
 ## Installation
+
 ### Clone the Repository (recursively to include the PHP-Mailer submodule)
+
     $ git clone --recursive https://github.com/baiplr/php-login.git
 
 ### Creating the MySQL Database
@@ -35,7 +46,9 @@ CREATE TABLE `loginAttempts` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+
 ### Setup the `login/dbconf.php` file
+
 ```php
 <?php
     //DATABASE CONNECTION VARIABLES
@@ -47,6 +60,7 @@ CREATE TABLE `loginAttempts` (
 ```
 
 ### Setup the `login/config.php` file
+
 <i>Read code comments for a description of each variable</i>
 
 ```php
@@ -85,8 +99,10 @@ CREATE TABLE `loginAttempts` (
 
     //IGNORE CODE BELOW THIS
 ```
+
 ### Place this code (from `index.php`) at the head of each page :
-> *** **Important** *** Checks to see if username $_SESSION variable is set. If not set, redirects to login page.
+
+> **\* **Important** \*** Checks to see if username $\_SESSION variable is set. If not set, redirects to login page.
 
 ```php
 <?php require "login/loginheader.php"; ?>
@@ -97,19 +113,19 @@ CREATE TABLE `loginAttempts` (
 If the user has the right username and password, then the `checklogin.php` will send 'true', register the username and the password in a session, and redirect to `index.php`.
 If the username and/or the password are wrong the `checklogin.php` will send "Wrong Username or Password".
 
-
 ###Signup/Login Workflow:
-> 1) Create new user using `signup.php` form
-> (note: validation occurs both client and server side)
-> &nbsp;&nbsp;&nbsp;&nbsp;<b>Validation requires: </b>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Passwords to match and be at least 4 characters
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Valid email address
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Unique username
-> 2) Password gets hashed and new GUID is generated for User ID
-> 3) User gets added to database as unverified
-> 4) Email is sent to user email (or $admin_email if set) with verification link
-> 5) User (or admin) clicks verification link which sends them to `verifyuser.php` and verifies user in the database
-> 6) Verified user may now log in
+
+> 1. Create new user using `signup.php` form
+>    (note: validation occurs both client and server side)
+>    &nbsp;&nbsp;&nbsp;&nbsp;<b>Validation requires: </b> > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Passwords to match and be at least 4 characters
+>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Valid email address
+>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Unique username
+> 2. Password gets hashed and new GUID is generated for User ID
+> 3. User gets added to database as unverified
+> 4. Email is sent to user email (or $admin_email if set) with verification link
+> 5. User (or admin) clicks verification link which sends them to `verifyuser.php` and verifies user in the database
+> 6. Verified user may now log in
 
 ### Attribution
-This script is based upon the original fethica PHP-login script, version 2.0, which can be found [here](https://github.com/therecluse26/PHP-Login/tree/v2.0). PHP-Login 3.0 is maintained by [therecluse26](https://github.com/therecluse26), and this project is a continuation of the v2.0 script. 
+
+This script is based upon the original fethica PHP-login script, version 2.0, which can be found [here](https://github.com/therecluse26/PHP-Login/tree/v2.0). PHP-Login 3.0 is maintained by [therecluse26](https://github.com/therecluse26), and this project is a continuation of the v2.0 script.
